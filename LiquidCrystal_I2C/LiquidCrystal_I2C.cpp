@@ -201,7 +201,7 @@ void LiquidCrystal_I2C::createChar(uint8_t location, uint8_t charmap[]) {
 	location &= 0x7; // we only have 8 locations 0-7
 	command(LCD_SETCGRAMADDR | (location << 3));
 	for (int i=0; i<8; i++) {
-		write(charmap[i]);
+		simplewrite(charmap[i]);
 	}
 }
 
@@ -244,13 +244,10 @@ size_t LiquidCrystal_I2C::write(uint8_t value)
   return 0; 
 }
 
-/*
-inline size_t LiquidCrystal_I2C::write(uint8_t value) {
+inline size_t LiquidCrystal_I2C::simplewrite(uint8_t value) {
 	send(value, Rs);
 	return 0;
 }
-
-*/
 
 /************ low level data pushing commands **********/
 

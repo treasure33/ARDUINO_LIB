@@ -81,6 +81,7 @@ public:
   void setCursor(uint8_t, uint8_t); 
   virtual size_t write(uint8_t);
   void command(uint8_t);
+  virtual size_t simplewrite(uint8_t value); 
   void init();
 
 ////compatibility API function aliases
